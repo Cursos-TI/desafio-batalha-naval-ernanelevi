@@ -25,33 +25,43 @@ int main()
     }
 
     // navios (tamanho fixo 3)
-    int navio_horizontal[3] = {3, 3, 3};
-    int navio_vertical[3] = {3, 3, 3};
+    int navio[3] = {3, 3, 3};
 
-    // coordenadas iniciais
-    int linha_horizontal = 2;  // linha c
-    int coluna_horizontal = 1; // coluna 2
+    // posicionamento navio
 
-    int linha_vertical = 5;  // linha f
-    int coluna_vertical = 7; // coluna 8
-
-    // navio horizontal
+    // horizontal
+    int linha_h = 4, coluna_h = 2;
     for (int i = 0; i < 3; i++)
     {
-        tabuleiro[linha_horizontal][coluna_horizontal + i] = navio_horizontal[i];
+        tabuleiro[linha_h][coluna_h + i] = navio[i];
     }
 
-    // navio vertical
+    // vertical
+    int linha_v = 5, coluna_v = 7;
     for (int i = 0; i < 3; i++)
     {
-        tabuleiro[linha_vertical + i][coluna_vertical] = navio_vertical[i];
+        tabuleiro[linha_v + i][coluna_v] = navio[i];
+    }
+
+    // diagonal 1
+    int linha_d1 = 0, coluna_d1 = 0;
+    for (int i = 0; i < 3; i++)
+    {
+        tabuleiro[linha_d1 + i][coluna_d1 + i] = navio[i];
+    }
+
+    // diagonal 2
+    int linha_d2 = 0, coluna_d2 = 9;
+    for (int i = 0; i < 3; i++)
+    {
+        tabuleiro[linha_d2 + i][coluna_d2 - i] = navio[i];
     }
 
     // exibição
     printf(" ");
     for (int i = 0; i < 10; i++)
     {
-        printf("%d ", i + 1); // cabeçalho colunas
+        printf("%2d ", i + 1); // cabeçalho colunas
     }
     printf("\n");
 
@@ -60,7 +70,7 @@ int main()
         printf("%c ", linha[i]); // nome linha
         for (int j = 0; j < 10; j++)
         {
-            printf("%d ", tabuleiro[i][j]);
+            printf("%2d ", tabuleiro[i][j]);
         }
         printf("\n");
     }
