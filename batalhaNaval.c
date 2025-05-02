@@ -38,13 +38,13 @@ int main()
     // navio horizontal
     for (int i = 0; i < 3; i++)
     {
-        tabuleiro[linha_horizontal + i][coluna_horizontal + i] = navio_horizontal[i];
+        tabuleiro[linha_horizontal][coluna_horizontal + i] = navio_horizontal[i];
     }
 
     // navio vertical
     for (int i = 0; i < 3; i++)
     {
-        tabuleiro[linha_vertical + i][coluna_vertical + i] = navio_vertical[i];
+        tabuleiro[linha_vertical + i][coluna_vertical] = navio_vertical[i];
     }
 
     // exibição
