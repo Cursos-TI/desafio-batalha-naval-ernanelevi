@@ -101,7 +101,7 @@ int main()
     {
         for (int j = 0; j < 5; j++)
         {
-            if (abs(1 - 2 + abs(j - 2) <= 2))
+            if (abs(i - 2) + abs(j - 2) <= 2)
                 octaedro[i][j] = 1;
             else
                 octaedro[i][j] = 0;
